@@ -1,0 +1,133 @@
+﻿.anime-home-container {
+    position: relative;
+    height: 100vh;
+    background: url('../../background.jpg') center no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
+
+.anime-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.anime-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 2rem;
+}
+
+.anime-welcome {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+    animation: fadeIn 1s ease;
+}
+
+.anime-highlight {
+    color: #ff00cc;
+    text-shadow: 0 0 15px #ff00cc;
+}
+
+.anime-subtext {
+    font-size: 1.5rem;
+    margin-bottom: 2.5rem;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+    opacity: 0.9;
+    animation: fadeIn 1.5s ease;
+}
+
+.anime-main-button {
+    background: linear-gradient(45deg, #ff00cc, #3366ff);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 5px 20px rgba(255, 0, 204, 0.4);
+    animation: fadeInUp 1s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.anime-main-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(51, 102, 255, 0.6);
+}
+
+.anime-main-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: 0.5s;
+}
+
+.anime-main-button:hover::before {
+    left: 100%;
+}
+
+.button-arrow {
+    transition: transform 0.3s ease;
+}
+
+.anime-main-button:hover .button-arrow {
+    transform: translateX(5px);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .anime-welcome {
+        font-size: 2.5rem;
+    }
+
+    .anime-subtext {
+        font-size: 1.2rem;
+    }
+
+    .anime-main-button {
+        padding: 12px 24px;
+        font-size: 1rem;
+    }
+}

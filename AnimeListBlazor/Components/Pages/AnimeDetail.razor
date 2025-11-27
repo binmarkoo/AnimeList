@@ -1,0 +1,55 @@
+﻿@if (SelectedAnime != null)
+{
+    <div class="modal-backdrop show" @onclick="CloseDetail"></div>
+    
+    <div class="anime-detail-modal">
+        <div class="anime-detail-container">
+            <div class="anime-detail-header">
+                <h2>@SelectedAnime.Name</h2>
+                <button class="close-btn" @onclick="CloseDetail">&times;</button>
+            </div>
+            
+            <div class="anime-detail-content">
+                <div class="anime-image-container">
+                    <img src="@SelectedAnime.PicSrc" alt="@SelectedAnime.Name" class="anime-detail-image">
+                </div>
+                
+                <div class="anime-info-container">
+                    <div class="anime-info-row">
+                        <span class="info-label">ID:</span>
+                        <span class="info-value">@SelectedAnime.Id</span>
+                        <span class="info-label">Rating:</span>
+                        <span class="info-value">@SelectedAnime.Rating/10</span>
+                    </div>
+
+                    <div class="anime-info-row">
+                        <span class="info-label">Genre:</span>
+                        <span class="info-value">@SelectedAnime.Genre</span>
+                        <span class="info-label">State:</span>
+                        <span class="info-value">@SelectedAnime.State</span>
+                    </div>
+
+                    <div class="anime-info-row">
+                        <span class="info-label">Type:</span>
+                        <span class="info-value">@SelectedAnime.Type</span>
+                        <span class="info-label">Release Year:</span>
+                        <span class="info-value">@SelectedAnime.ReleaseYear</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@code {
+    [Parameter]
+    public AnimeItem? SelectedAnime { get; set; }
+
+    [Parameter]
+    public EventCallback OnClose { get; set; }
+
+    private async Task CloseDetail()
+    {
+        await OnClose.InvokeAsync();
+    }
+}

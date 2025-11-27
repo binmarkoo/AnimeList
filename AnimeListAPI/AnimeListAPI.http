@@ -1,0 +1,15 @@
+@AnimeListAPI_HostAddress = https://localhost:7173
+
+GET {{AnimeListAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+
+POST {{AnimeListAPI_HostAddress}}/api/animeitems
+Content-Type: application/json
+
+{
+  //AnimeItem
+}
+
+###

@@ -1,0 +1,330 @@
+﻿.mb-4 {
+    color: white !important; /* Weiße Schrift für den Titel */
+}
+
+.anime-list-container {
+    padding: 20px;
+    background: #121212;
+    min-height: 100vh;
+}
+
+.anime-list-title {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 2.2rem;
+    text-shadow: 0 0 10px rgba(255, 0, 204, 0.5);
+}
+
+.anime-search-box {
+    width: 300px; /* Etwas schmaler als vorher */
+    margin-right: auto; /* Verschiebt die Suchleiste nach links */
+    position: relative;
+}
+
+.search-input {
+    width: 100%;
+    padding: 12px 20px 12px 45px;
+    border-radius: 50px;
+    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 1rem;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    height: 40px; /* Höhe an andere Eingabefelder angepasst */
+}
+
+.search-input:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 0 2px #ff00cc, 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.search-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.2rem;
+}
+
+.loading-text,
+.no-results-text {
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 1.2rem;
+}
+
+.card-img-container {
+    height: 75%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1; /* Unter dem Border */
+}
+
+.card-img-top {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    transform-origin: center; /* Skaliert vom Zentrum aus */
+}
+
+.card-body {
+    height: 25%;
+    padding: 0.8rem !important;
+    background: #1a1a1a;
+}
+
+.card-title {
+    color: white !important; /* Weiße Schrift für den Titel */
+    font-weight: 500;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+}
+
+.card {
+    border: none !important;
+    border-radius: 12px !important;
+    position: relative;
+    background: #1a1a1a !important;
+    overflow: hidden; /* Wichtig: Begrenzt den gesamten Card-Inhalt */
+    cursor: pointer;
+    z-index: 1;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 12px;
+    padding: 2px;
+    background: linear-gradient(45deg, #ff00cc, #3333ff);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+    z-index: 2; /* Stellt sicher, dass der Border über dem Bild liegt */
+}
+
+/* Verbesserter Hover-Effekt */
+.card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card:hover::before {
+    opacity: 1;
+    background: linear-gradient(45deg, #ff00cc, #00ccff);
+}
+
+.card:hover .card-img-top {
+    transform: scale(1.05); /* Reduzierte Skalierung für besseren Effekt */
+}
+
+.card:hover .card-title {
+    color: #fff !important;
+    text-shadow: 0 0 10px rgba(255,255,255,0.5);
+}
+
+/* Glow-Effekt beim Hover */
+@keyframes cardGlow {
+    0% {
+        box-shadow: 0 0 10px rgba(255, 0, 204, 0.3);
+    }
+
+    50% {
+        box-shadow: 0 0 20px rgba(51, 153, 255, 0.5);
+    }
+
+    100% {
+        box-shadow: 0 0 10px rgba(255, 0, 204, 0.3);
+    }
+}
+
+.card:hover {
+    animation: cardGlow 2s infinite alternate;
+}
+
+.filter-container {
+    display: flex;
+    align-items: center; /* Zentriert alle Elemente vertikal */
+    gap: 15px;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.filter-group {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.left-group, .right-group {
+    margin: 0;
+}
+
+.filter-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.filter-label {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.filter-input {
+    padding: 8px 12px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 0.9rem;
+    width: 120px;
+    transition: all 0.3s ease;
+}
+
+.filter-input:focus {
+    outline: none;
+    border-color: #ff00cc;
+    box-shadow: 0 0 0 2px rgba(255, 0, 204, 0.3);
+}
+
+.filter-select {
+    padding: 8px 12px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 0.9rem;
+    width: 120px;
+    transition: all 0.3s ease;
+}
+
+/* Ändere den Hintergrund der Filter-Elemente zu schwarz */
+.filter-input, .filter-select {
+    background: #121212 !important; /* Dunkler Hintergrund */
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Anpassung für die Placeholder-Farbe */
+.filter-input::placeholder {
+    color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* Stil für die Labels */
+.filter-label {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* Hover- und Focus-Effekte beibehalten */
+.filter-input:focus, .filter-select:focus {
+    border-color: #ff00cc !important;
+    box-shadow: 0 0 0 2px rgba(255, 0, 204, 0.3) !important;
+}
+
+.filter-option {
+    color: white;
+}
+
+.filter-input, .filter-select {
+    padding: 8px 12px;
+    height: 40px; /* Gleiche Höhe wie Suchleiste */
+    box-sizing: border-box;
+}
+
+.filter-select:focus {
+    outline: none;
+    border-color: #ff00cc;
+    box-shadow: 0 0 0 2px rgba(255, 0, 204, 0.3);
+}
+
+.card-genre-footer {
+    padding: 0.5rem;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.3);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card-genre-footer small {
+    color: white !important;
+    font-size: 0.75rem;
+    opacity: 0.8;
+}
+
+/* Responsive Anpassungen bleiben gleich */
+@media (max-width: 576px) {
+    .row-cols-2 > * {
+        width: 50%;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+    .row-cols-sm-3 > * {
+        width: 33.333%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+    .row-cols-md-4 > * {
+        width: 25%;
+    }
+}
+
+@media (min-width: 992px) {
+    .row-cols-lg-5 > * {
+        width: 20%;
+    }
+}
+
+/* Responsive Anpassungen */
+@media (max-width: 1200px) {
+    .filter-container {
+        flex-direction: column;
+    }
+
+    .left-group, .right-group {
+        margin: 0;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .anime-search-box {
+        width: 100%;
+        max-width: 500px;
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .filter-group {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .filter-item {
+        flex: 1;
+        min-width: 120px;
+    }
+
+    .filter-input, .filter-select {
+        width: 100px;
+    }
+}

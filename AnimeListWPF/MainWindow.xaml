@@ -1,0 +1,147 @@
+﻿<Window x:Class="AnimeListWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AnimeListWPF"
+        mc:Ignorable="d"
+        WindowState="Maximized"
+        Title="MainWindow" Height="1080" Width="1920">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="C:\Users\Startklar\Projects\AnimeList\AnimeListWPF\background.jpg" Stretch="Fill" />
+        </Grid.Background>
+
+        <Label Content="AnimeList Admin - Marko" HorizontalAlignment="Center" Margin="0,44,0,0" VerticalAlignment="Top" FontSize="60" FontWeight="Bold"/>
+
+        <Rectangle HorizontalAlignment="Left" Height="637" Margin="233,221,0,0" Stroke="White" VerticalAlignment="Top" Width="839" Fill="#CCFFFFFF" RadiusX="20" RadiusY="20"/>
+
+        <ListBox Name="AnimeListView" d:ItemsSource="{d:SampleData ItemCount=20}" Margin="1225,240,238,172" Background="#33FFFFFF" AlternationCount="2" FontSize="20" SelectionChanged="AnimeListView_SelectionChanged">
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="ListBoxItem">
+                    <Setter Property="Background" Value="AntiqueWhite"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="ListBoxItem">
+                                <Border CornerRadius="10" BorderThickness="1" BorderBrush="Gray" Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="ItemsControl.AlternationIndex" Value="1">
+                            <Setter Property="Background" Value="White"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </ListBox.ItemContainerStyle>
+        </ListBox>
+
+        <Label Content="ID:" HorizontalAlignment="Left" Margin="326,245,0,0" VerticalAlignment="Top" FontSize="30" />
+        <Label Content="Name:" HorizontalAlignment="Left" Margin="276,377,0,0" VerticalAlignment="Top" FontSize="30" />
+        <Label Content="Type:" HorizontalAlignment="Left" Margin="722,377,0,0" VerticalAlignment="Top" FontSize="30" />
+        <Label Content="Genre:" HorizontalAlignment="Left" Margin="276,509,0,0" VerticalAlignment="Top" FontSize="30" />
+        <Label Content="Rating:" HorizontalAlignment="Left" Margin="703,509,0,0" VerticalAlignment="Top" FontSize="30" />
+        <Label Content="State:" HorizontalAlignment="Left" Margin="294,641,0,0" VerticalAlignment="Top" FontSize="30" />
+        <Label Content="Release:" HorizontalAlignment="Left" Margin="689,641,0,0" VerticalAlignment="Top" FontSize="30" />
+        <Label Content="Pic Src:" HorizontalAlignment="Left" Margin="269,773,0,0" VerticalAlignment="Top" FontSize="30" />
+        <Label Content="" HorizontalAlignment="Left" Margin="521,769,0,0" VerticalAlignment="Top" FontSize="30"/>
+
+        <TextBox Name="IdTextBox" HorizontalAlignment="Left" Margin="377,249,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="245" FontSize="30" IsReadOnly="True" IsTabStop="False">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10" />
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+
+        <TextBox Name="NameTextBox" HorizontalAlignment="Left" Margin="377,381,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="245" FontSize="30">
+            <TextBox.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10" />
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+
+        <TextBox Name="TypeTextBox" HorizontalAlignment="Left" Margin="805,381,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="245" FontSize="30">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10" />
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+
+        <TextBox Name="GenreTextBox" HorizontalAlignment="Left" Margin="377,513,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="245" FontSize="30">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10" />
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox Name="RatingTextBox" HorizontalAlignment="Left" Margin="805,513,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="245" FontSize="30">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10" />
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+
+        <TextBox Name="StateTextBox" HorizontalAlignment="Left" Margin="377,645,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="245" FontSize="30">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10" />
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+
+        <TextBox x:Name="ReleaseYearTextBox" HorizontalAlignment="Left" Margin="805,645,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="245" FontSize="30">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10" />
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+
+        <TextBox x:Name="PicSrcTextBox" HorizontalAlignment="Left" Margin="377,777,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="245" FontSize="30">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10" />
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+
+        <Button Content="Clear" HorizontalAlignment="Left" Margin="672,779,0,0" VerticalAlignment="Top" FontSize="25" Click="ClearButton_Click" Cursor="Hand" Width="75" BorderBrush="White" Background="White">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10" />
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <Button Content="Add" HorizontalAlignment="Left" Margin="761,779,0,0" VerticalAlignment="Top" FontSize="25" Click="AddButton_Click" Cursor="Hand" Width="75" BorderBrush="White" Background="White">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10" />
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <Button Content="Update" HorizontalAlignment="Left" Margin="850,779,0,0" VerticalAlignment="Top" FontSize="25" Click="UpdateButton_Click" Cursor="Hand" Width="96" BorderBrush="White" Background="White">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10" />
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <Button Content="Delete" HorizontalAlignment="Left" Margin="960,779,0,0" VerticalAlignment="Top" FontSize="25" Click="DeleteButton_Click" Cursor="Hand" Width="90" BorderBrush="White" Background="White">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10" />
+                </Style>
+            </Button.Resources>
+        </Button>
+
+    </Grid>
+</Window>

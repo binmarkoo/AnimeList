@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35913.81
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnimeListAPI", "AnimeListAPI\AnimeListAPI.csproj", "{3BFD9698-EE55-335B-CA52-C29AF82FEABB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnimeListBlazor", "AnimeListBlazor\AnimeListBlazor.csproj", "{1B186CAD-6C7D-FD8C-4948-6B7C7F70F400}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnimeListWPF", "AnimeListWPF\AnimeListWPF.csproj", "{6DFDA392-4F21-29DD-D1C2-D367C45A8506}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnimeListLibrary", "AnimeListLibrary\AnimeListLibrary.csproj", "{0249AF58-6BD2-4319-96F6-2291AC9CD37D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3BFD9698-EE55-335B-CA52-C29AF82FEABB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BFD9698-EE55-335B-CA52-C29AF82FEABB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BFD9698-EE55-335B-CA52-C29AF82FEABB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BFD9698-EE55-335B-CA52-C29AF82FEABB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B186CAD-6C7D-FD8C-4948-6B7C7F70F400}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B186CAD-6C7D-FD8C-4948-6B7C7F70F400}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B186CAD-6C7D-FD8C-4948-6B7C7F70F400}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B186CAD-6C7D-FD8C-4948-6B7C7F70F400}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DFDA392-4F21-29DD-D1C2-D367C45A8506}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DFDA392-4F21-29DD-D1C2-D367C45A8506}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DFDA392-4F21-29DD-D1C2-D367C45A8506}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DFDA392-4F21-29DD-D1C2-D367C45A8506}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0249AF58-6BD2-4319-96F6-2291AC9CD37D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0249AF58-6BD2-4319-96F6-2291AC9CD37D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0249AF58-6BD2-4319-96F6-2291AC9CD37D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0249AF58-6BD2-4319-96F6-2291AC9CD37D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FC260E50-BA80-46FC-A982-63D8AC212323}
+	EndGlobalSection
+EndGlobal

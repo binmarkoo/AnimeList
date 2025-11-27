@@ -1,0 +1,23 @@
+﻿@page "/"
+@inject NavigationManager Navigation
+
+<PageTitle>AnimeList</PageTitle>
+
+<div class="anime-home-container">
+    <div class="anime-overlay"></div>
+    <div class="anime-content">
+        <h1 class="anime-welcome">Willkommen in deiner <span class="anime-highlight">Anime-Sammlung</span></h1>
+        <p class="anime-subtext">Entdecke und verwalte deine Lieblingsserien</p>
+        <button @onclick="NavigateToAnimeList" class="anime-main-button">
+            Zur Anime-Liste
+            <span class="button-arrow">→</span>
+        </button>
+    </div>
+</div>
+
+@code {
+    private void NavigateToAnimeList()
+    {
+        Navigation.NavigateTo("/animelist");
+    }
+}
