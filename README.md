@@ -76,11 +76,3 @@ dotnet run
 | 🟡 `POST` | `/api/AnimeItems` | Neuen Anime anlegen |
 | 🔵 `PUT` | `/api/AnimeItems/{id}` | Anime updaten |
 | 🔴 `DELETE` | `/api/AnimeItems/{id}` | Anime löschen |
-
----
-
-<div align="center">
-
-*Watchlist wächst schneller als du gucken kannst? Kennen wir. 😅🍥*
-
-</div>
